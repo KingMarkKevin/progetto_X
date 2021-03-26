@@ -15,7 +15,7 @@ input[type=text], input[type=password] {
 
 /* Set a style for all buttons */
 button {
-  background-color: #4CAF50;
+  background-color: #034f84;
   color: white;
   padding: 14px 20px;
   margin: 8px 0;
@@ -42,22 +42,22 @@ button:hover {
   margin: 24px 0 12px 0;
 }
 
-/* Avatar image */
+/* Avatar image 
 img.avatar {
   width: 40%;
   border-radius: 50%;
-}
+}*/
 
 /* Add padding to containers */
 .container {
   padding: 16px;
 }
 
-/* The "Forgot password" text */
+/* The "Forgot password" text 
 span.psw {
   float: right;
   padding-top: 16px;
-}
+}*/
 
 /* Change styles for span and cancel button on extra small screens */
 @media screen and (max-width: 300px) {
