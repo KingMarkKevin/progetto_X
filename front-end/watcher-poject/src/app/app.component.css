@@ -20,11 +20,21 @@ nav:after{
 }
 nav .logo{
   float: left;
-  color: white;
+  line-height: 70px;
+  padding-left: 20px;
+}
+nav .titolo{
+  float: left;
+  color:white;
   font-size: 27px;
   font-weight: 600;
   line-height: 70px;
-  padding-left: 60px;
+  padding-left: 10px;
+
+}
+nav .titolo a{
+  text-decoration: none;
+   color:white;
 }
 nav ul{
   float: right;

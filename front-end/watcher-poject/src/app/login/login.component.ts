@@ -1,3 +1,4 @@
+/*
 import { Component, OnInit } from '@angular/core';
 import {Location} from '@angular/common'
 
@@ -17,3 +18,4 @@ export class LoginComponent implements OnInit {
   }
 
 }
+*/
