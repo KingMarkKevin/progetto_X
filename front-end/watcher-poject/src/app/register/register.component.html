@@ -1,1 +1,25 @@
-<p>register works!</p>
+<!DOCTYPE html>
+<html>
+  <head>
+  </head>
+  <body>
+    <div class="register-box">
+      <h1>Login Here</h1>
+      <form>
+        <!-- Name and surname input -->
+        <label for="name">Nome</label>
+        <input type="text" placeholder="Inserisci Nome" required #nome>
+        <label for="surname">Cognome</label>
+        <input type="text" placeholder="Inserisci Cognome" required #cognome>
+        <!-- Email input -->
+        <label for="email">Email</label>
+        <input type="text" placeholder="Inserisci Email" required #email>
+        <!-- Password input -->
+        <label for="password">Password</label>
+        <input id="pw" type="password" placeholder="Inserisci Password" required #password>
+        <button class="signInBtn" (click)="submit(nome, cognome, email, password)" routerLink="/login" routerLinkActive="active" value="Registrati"></button>
+        <button class="cancelBtn" type="button" routerLink="/" routerLinkActive="active">Cancel</button>
+      </form>
+    </div>
+  </body>
+</html>
