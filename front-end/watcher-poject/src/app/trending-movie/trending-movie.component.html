@@ -1,0 +1,17 @@
+<div *ngIf="movieList">
+    <div class="row">
+       <div class="col-sm-6 col-md-4" *ngFor="let t of movieList.results">
+          <div class="thumbnail">
+             <div class="content">
+                <img class="img-responsive" src="{{t.poster_path}}" alt="poster">
+                <div class="caption">
+                   <h4>
+                      <a [routerLink]="['movie', t.id]">{{t.original_title}}</a>
+                      <p>Average Rating: {{t.vote_average}}</p>
+                   </h4>
+                </div>
+             </div>
+          </div>
+       </div>
+    </div>
+ </div>

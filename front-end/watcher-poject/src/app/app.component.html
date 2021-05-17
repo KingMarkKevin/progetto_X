@@ -22,7 +22,7 @@
             <a href="#">Features</a>
             <input type="checkbox" id="btn-1">
             <ul>
-               <li><a href="#">Pages</a></li>
+               <li><a routerLink="/trending" routerLinkActive="active">Trending</a></li>
                <li><a href="#">Elements</a></li>
                <li><a href="#">Icons</a></li>
             </ul>
@@ -53,39 +53,6 @@
   </div>
 
   <body>
-      <div *ngIf="movieList">
-         <h1>Results</h1>
-      <div class="row">
-      <div class="col-sm-6 col-md-4" *ngFor="let t of movieList.results">
-         <div class="thumbnail">
-
-            <div class="content">
-            <img src="{{ t.poster_path.url }}" class="img-responsive">
-            <div class="caption">
-               <h3>
-                  <a [routerLink]="['/artists', t.artists[0].id]">
-                  {{ t.original_title }}
-                  </a>
-               </h3>
-               <br>
-               <p>
-                  <a [routerLink]="['/tracks', t.id]">
-                  {{ t.name }}
-                  </a>
-               </p>
-            </div>
-            <div class="attribution">
-               <h4>
-                  <a [routerLink]="['/albums', t.album.id]">
-                  {{ t.album.name }}
-                  </a>
-               </h4>
-            </div>
-            </div>
-         </div>
-      </div>
-      </div>
-      </div>
     <router-outlet></router-outlet>
   </body>
 
