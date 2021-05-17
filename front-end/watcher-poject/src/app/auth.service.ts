@@ -8,8 +8,8 @@ export class AuthService {
 
   constructor(private  http: HttpClient) { }
 
-  loginUtente(email: string, psw : string) {
-    const url = `http://localhost:3000/users/${email}/${psw}`;
+  signin(email: string, psw : string) {
+    const url = `http://localhost:3000/signIn/${email}/${psw}`;
     return this.http.get(url);
   }
 

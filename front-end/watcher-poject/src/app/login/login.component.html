@@ -22,21 +22,33 @@
 <html>
   <head>
   </head>
-  <body>
-
+  <div *ngIf = "!isAuthorized">
     <div class="login-box">
       <h1>Login Here</h1>
       <form>
         <!-- USERNAME INPUT -->
-        <label for="email">Username</label>
-        <input type="text" placeholder="Enter Email">
+        <label for="email">Email</label>
+        <input type="text" placeholder="Enter Email" required #email>
         <!-- PASSWORD INPUT -->
         <label for="password">Password</label>
-        <input type="password" placeholder="Enter Password">
-        <input type="submit" value="Log In">
+        <input type="password" placeholder="Enter Password" (keydown.enter) = "submit(email,password)" required #password>
+
+        <div *ngIf = "pwErr">
+          <p>{{pwErr}}</p>
+        </div>
+
+        <input type="button" (click) = "submit(email,password)" value="Log In">
         <a href="#">Lost your Password?</a><br>
         <a href="/register">Don't have An account?</a>
       </form>
     </div>
-  </body>
+  </div>
+  <div *ngIf = "isAuthorized">
+    <div>
+      <p><b>Informazioni account:</b></p>
+      <p>Nome: <span>{{results.nome}}</span></p>
+      <p>Nome: <span>{{results.cognome}}</span></p>
+      <p>Email: <span>{{results.email}}</span></p>
+    </div>
+  </div>
 </html>

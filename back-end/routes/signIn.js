@@ -18,7 +18,7 @@ router.get('/:mail/:pass', function (req, res, next) {
             if (err) console.log("connesione al db non riuscita");
             else{
                 const collection = client.db("watcher_project").collection("users");
-                collection.find({$and:[{'email':e},{"password":p}]}).toArray(callBackQuery);
+                collection.find({$and:[{"email":e},{"password":p}]}).toArray(callBackQuery);
             }
 
         }  
