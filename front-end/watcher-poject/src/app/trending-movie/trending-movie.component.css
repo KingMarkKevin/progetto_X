@@ -1,3 +1,7 @@
-img{
+img {
   padding: 10px;
+}
+
+img-responsive {
+  margin: 0px;
 }

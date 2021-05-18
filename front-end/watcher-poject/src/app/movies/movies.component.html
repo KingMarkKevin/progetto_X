@@ -1,1 +1,14 @@
-<p>movies works!</p>
+<div *ngIf="movie">
+        <img [src]="photoURL(movie.poster_path)">
+        {{movie.original_title}}
+        <p>{{movie.overview}}</p>
+        <p>{{movie.release_date}}</p>
+        <p>{{movie.runtime}}</p>
+        <p>{{movie.vote_average}}</p>
+        
+</div>
+<div *ngIf="media">
+    <a href="videoURL(media.results[0].key)">Link</a>
+    {{media}}
+</div>
+

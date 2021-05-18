@@ -20,6 +20,6 @@ export class TrendingMovieComponent{
 
   photoURL(urltoSanitize) {
     console.log(urltoSanitize);
-    return this.sanitizer.bypassSecurityTrustUrl("https://image.tmdb.org/t/p/w300" + urltoSanitize);
+    return this.sanitizer.bypassSecurityTrustUrl("https://image.tmdb.org/t/p/w500" + urltoSanitize);
   }
 }
