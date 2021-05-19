@@ -1,11 +1,16 @@
 img {
   padding: 10px;
+  height: 200px; 
+  width: 340px;
 }
 
 img-responsive {
   margin: 0px;
 }
 
+.row {
+  padding: 0px;
+}
 
 footer
 {
@@ -24,4 +29,14 @@ footer
 .page-link
 {
   font-size: 14px;
+}
+
+#pageSearch {
+  width: 50px;
+  height: 34px;
+  text-align: center;
+}
+
+.infoPage {
+  display: block;
 }

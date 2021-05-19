@@ -28,4 +28,10 @@ export class TrendingService {
     let obsTrailer = this.http.get(url);
     return obsTrailer;
   }
+
+  searchMovie(query: string) {
+    const url = `https://api.themoviedb.org/3/search/company?api_key=9fe600e56e7db7f0ed935c6375a936fe&query=${query}&page=1`
+    let obsSearch = this.http.get(url);
+    return obsSearch;
+  }
 }
