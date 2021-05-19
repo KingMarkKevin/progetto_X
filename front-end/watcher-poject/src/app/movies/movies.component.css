@@ -1,0 +1,13 @@
+.details {
+    display: flex;
+}
+
+.info {
+    display: block;
+    padding: 50px;
+}
+
+.poster {
+    padding-left: 20px;
+    padding-top: 10px;
+}

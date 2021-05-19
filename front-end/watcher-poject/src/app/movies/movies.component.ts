@@ -3,6 +3,8 @@ import { DomSanitizer } from '@angular/platform-browser';
 import { ActivatedRoute, Router, ParamMap } from '@angular/router'
 import { Observable } from 'rxjs';
 import { TrendingService } from '../trending.service';
+import { HttpClient } from '@angular/common/http';
+import { Conditional } from '@angular/compiler';
 
 @Component({
   selector: 'app-movies',
@@ -12,8 +14,8 @@ import { TrendingService } from '../trending.service';
 export class MoviesComponent implements OnInit{
 
   routeObs: Observable<ParamMap>;
-  movieServiceObs : Observable<object>;
-  obs: Observable<object>;
+  movieServiceObs : Observable<Object>;
+  obsMedia: Observable<Object>;
   movie: any;
   media: any;
   idMovie: number;
@@ -27,33 +29,24 @@ export class MoviesComponent implements OnInit{
   ngOnInit(): void {
     this.routeObs = this.route.paramMap;
     this.routeObs.subscribe(this.getRouterParam);
-    this.obs.subscribe(this.getTrailers);
   }
 
   getRouterParam = (params: ParamMap) => {
     let movieId = params.get('id');
-    let id : number = +movieId;
+    let id : number = + movieId;
     this.idMovie = id;
-    console.log(movieId)
-    //this.movieServiceObs = this.movies.getMovie(id);
+    console.log(id);
     this.movies.getMovie(id).subscribe((data) => this.movie = data);
+    this.movies.getTrailer(this.idMovie).subscribe((data) => this.media = data);
   }
-
-  getTrailers() {
-    this.movies.getTrailer(this.idMovie).subscribe((data) => console.log(this.media = data));
-  }
-
+  
   videoURL(urltoSanitize) {
-    console.log(urltoSanitize);
+    //console.log(urltoSanitize);
     return this.sanitizer.bypassSecurityTrustUrl("https://www.youtube.com/watch?v=" + urltoSanitize);
   }
 
   photoURL(urltoSanitize) {
     return this.sanitizer.bypassSecurityTrustUrl("https://image.tmdb.org/t/p/w500" + urltoSanitize);
   }
-
-
-
-
 
 }
