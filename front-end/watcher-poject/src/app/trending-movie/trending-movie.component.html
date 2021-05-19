@@ -21,11 +21,11 @@
     <footer>
       <nav aria-label="Page navigation example">
          <ul class="pagination">
-           <li class="page-item"><a class="page-link" href="#">Previous</a></li>
-           <li class="page-item"><a class="page-link" href="#">1</a></li>
-           <li class="page-item"><a class="page-link" href="#">2</a></li>
-           <li class="page-item"><a class="page-link" href="#">3</a></li>
-           <li class="page-item"><a class="page-link" href="#">Next</a></li>
+           <li class="page-item"><a class="page-link material-icons" (click)="changePage(1)">first_page</a></li>
+           <li class="page-item"><a class="page-link material-icons" (click)="modPage(-1)">chevron_left</a></li>
+           <li class="page-item"><input  #page class="page-link" (keydown.enter)="specificPage(page)" value={{pages}}></li>
+           <li class="page-item"><a class="page-link material-icons" (click)="modPage(1)">chevron_right</a></li>
+           <li class="page-item"><a class="page-link material-icons" (click)="changePage(1000)">last_page</a></li>
          </ul>
        </nav>
     </footer>

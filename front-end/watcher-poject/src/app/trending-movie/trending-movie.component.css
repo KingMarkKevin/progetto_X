@@ -5,3 +5,23 @@ img {
 img-responsive {
   margin: 0px;
 }
+
+
+footer
+{
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+
+footer
+{
+  font-size: 28px;
+}
+
+.page-link
+{
+  font-size: 14px;
+}
