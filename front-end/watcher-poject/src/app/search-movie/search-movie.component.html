@@ -2,9 +2,38 @@
 
 <p>
     <input type="text" #newQuery>
-    <button (click)="submit(newQuery)">Search</button>
+    <button (keydown.enter)="submit(newQuery)" (click)="submit(newQuery)">Search</button>
 </p>
 
 <div *ngIf="result">
-    {{result.results[0].original_title}}
+    <div class="row">
+        <div class="col-sm-6 col-md-4" *ngFor="let m of result.results">
+           <div class="thumbnail">
+              <div class="content">
+                 <a [routerLink]="['/movie', m.id]" routerLinkActive="active">
+                   <img class="img-responsive" [src]="photoURL(m.poster_path)" alt="poster">
+                 </a>
+                 
+                 <div class="caption">
+                    <h4>
+                       <a [routerLink]="['/movie', m.id]" routerLinkActive="active">{{m.original_title}}</a>
+                       <p>Average Rating: {{m.vote_average}}</p>
+                    </h4>
+                 </div>
+              </div>
+           </div>
+        </div>
+     </div>
+     <footer>
+        <nav aria-label="Page navigation example">
+           <ul class="pagination">
+             <li class="page-item"><a class="page-link material-icons" (click)="changePage(1)">first_page</a></li>
+             <li class="page-item"><a class="page-link material-icons" (click)="modPage(-1)">chevron_left</a></li>
+             <li class="page-item"><input id="pageSearch"  #page class="page-link" (keydown.enter)="specificPage(page)" value={{pages}}></li>
+             <li class="page-item"><a class="page-link material-icons" (click)="modPage(1)">chevron_right</a></li>
+             <li class="page-item"><a class="page-link material-icons" (click)="changePage(result.total_pages)">last_page</a></li>
+           </ul>
+         </nav>
+         
+      </footer>
 </div>

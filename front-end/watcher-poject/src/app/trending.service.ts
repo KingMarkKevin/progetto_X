@@ -30,7 +30,7 @@ export class TrendingService {
   }
 
   searchMovie(query: string) {
-    const url = `https://api.themoviedb.org/3/search/company?api_key=9fe600e56e7db7f0ed935c6375a936fe&query=${query}&page=1`
+    const url = `https://api.themoviedb.org/3/search/movie?api_key=9fe600e56e7db7f0ed935c6375a936fe&language=en-US&query=${query}&page=1&include_adult=true`
     let obsSearch = this.http.get(url);
     return obsSearch;
   }
