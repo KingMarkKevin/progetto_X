@@ -29,9 +29,15 @@ export class TrendingService {
     return obsTrailer;
   }
 
-  searchMovie(query: string) {
-    const url = `https://api.themoviedb.org/3/search/movie?api_key=9fe600e56e7db7f0ed935c6375a936fe&language=en-US&query=${query}&page=1&include_adult=true`
+  searchMovie(query: string, num: number) {
+    const url = `https://api.themoviedb.org/3/search/movie?api_key=9fe600e56e7db7f0ed935c6375a936fe&language=en-US&query=${query}&page=${num}&include_adult=false`
     let obsSearch = this.http.get(url);
     return obsSearch;
+  }
+
+  getCredits(id: number) {
+    const url = `https://api.themoviedb.org/3/movie/${id}/credits?api_key=9fe600e56e7db7f0ed935c6375a936fe&language=en-US`
+    let obsCredits = this.http.get(url)
+    return obsCredits;
   }
 }

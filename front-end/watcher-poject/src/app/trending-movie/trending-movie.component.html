@@ -1,4 +1,4 @@
-<div *ngIf="movieList">
+<div class="content" *ngIf="movieList">
     <div class="row">
        <div class="col-sm-6 col-md-4" *ngFor="let t of movieList.results">
           <div class="thumbnail">
@@ -17,9 +17,9 @@
           </div>
        </div>
     </div>
-    <p class="infoPage">1 to 1000 pages</p>
+    <p class="infoPage">{{pages}} of 1000</p>
     <footer>
-      <nav aria-label="Page navigation example">
+      <nav class="pagination-nav" aria-label="Page navigation">
          <ul class="pagination">
            <li class="page-item"><a class="page-link material-icons" (click)="changePage(1)">first_page</a></li>
            <li class="page-item"><a class="page-link material-icons" (click)="modPage(-1)">chevron_left</a></li>

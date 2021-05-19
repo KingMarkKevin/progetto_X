@@ -24,6 +24,7 @@ export class TrendingMovieComponent{
   }
 
   setPage(num: number) {
+    window.scroll(0,0);
     this.obsTrends = this.trend.viewTrending(num);
     this.obsTrends.subscribe((data) => this.movieList = data)
   }

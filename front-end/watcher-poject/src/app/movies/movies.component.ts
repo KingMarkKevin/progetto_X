@@ -16,8 +16,11 @@ export class MoviesComponent implements OnInit{
   routeObs: Observable<ParamMap>;
   movieServiceObs : Observable<Object>;
   obsMedia: Observable<Object>;
+
   movie: any;
   media: any;
+  credits: any;
+
   idMovie: number;
 
   constructor(private route: ActivatedRoute, 
@@ -38,11 +41,14 @@ export class MoviesComponent implements OnInit{
     console.log(id);
     this.movies.getMovie(id).subscribe((data) => this.movie = data);
     this.movies.getTrailer(this.idMovie).subscribe((data) => this.media = data);
+    this.movies.getCredits(this.idMovie).subscribe((data) => this.credits = data);
   }
   
   videoURL(urltoSanitize) {
     //console.log(urltoSanitize);
-    return this.sanitizer.bypassSecurityTrustUrl("https://www.youtube.com/watch?v=" + urltoSanitize);
+    //return this.sanitizer.bypassSecurityTrustUrl("https://www.youtube.com/watch?v=" + urltoSanitize);
+    console.log(this.sanitizer.bypassSecurityTrustResourceUrl("https://www.youtube.com/embed/" + urltoSanitize))
+    return this.sanitizer.bypassSecurityTrustResourceUrl("https://www.youtube.com/embed/" + urltoSanitize);
   }
 
   photoURL(urltoSanitize) {

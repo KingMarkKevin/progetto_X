@@ -1,8 +1,8 @@
 <h1>Search a movie</h1>
 
 <p>
-    <input type="text" #newQuery>
-    <button (keydown.enter)="submit(newQuery)" (click)="submit(newQuery)">Search</button>
+    <input type="text" (keydown.enter)="submit(newQuery)" #newQuery>
+    <button (click)="submit(newQuery)">Search</button>
 </p>
 
 <div *ngIf="result">
@@ -11,7 +11,7 @@
            <div class="thumbnail">
               <div class="content">
                  <a [routerLink]="['/movie', m.id]" routerLinkActive="active">
-                   <img class="img-responsive" [src]="photoURL(m.poster_path)" alt="poster">
+                   <img class="img-responsive" [src]="photoURL(m.poster_path)" onerror="this.src = '../assets/poster-holder.jpg'" alt="poster">
                  </a>
                  
                  <div class="caption">
@@ -24,14 +24,15 @@
            </div>
         </div>
      </div>
+     <p class="infoPage">{{pages}} of {{result.total_pages}}</p>
      <footer>
         <nav aria-label="Page navigation example">
            <ul class="pagination">
-             <li class="page-item"><a class="page-link material-icons" (click)="changePage(1)">first_page</a></li>
+             <li class="page-item"><a class="page-link material-icons" (click)="changePage(1)" [disabled]="pages == 1" >first_page</a></li>
              <li class="page-item"><a class="page-link material-icons" (click)="modPage(-1)">chevron_left</a></li>
-             <li class="page-item"><input id="pageSearch"  #page class="page-link" (keydown.enter)="specificPage(page)" value={{pages}}></li>
+             <li class="page-item"><input id="pageSearch" #page class="page-link" (keydown.enter)="specificPage(page)" value={{pages}}></li>
              <li class="page-item"><a class="page-link material-icons" (click)="modPage(1)">chevron_right</a></li>
-             <li class="page-item"><a class="page-link material-icons" (click)="changePage(result.total_pages)">last_page</a></li>
+             <li class="page-item"><a class="page-link material-icons" (click)="changePage(result.total_pages)" [disabled]="pages == result.total_pages" >last_page</a></li>
            </ul>
          </nav>
          
