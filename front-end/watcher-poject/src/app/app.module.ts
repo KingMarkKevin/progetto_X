@@ -10,6 +10,7 @@ import { HttpClientModule } from '@angular/common/http';
 import { TrendingMovieComponent } from './trending-movie/trending-movie.component';
 import { MoviesComponent } from './movies/movies.component';
 import { SearchMovieComponent } from './search-movie/search-movie.component';
+import { HomeComponent } from './home/home.component';
 
 
 @NgModule({
@@ -19,7 +20,8 @@ import { SearchMovieComponent } from './search-movie/search-movie.component';
     RegisterComponent,
     TrendingMovieComponent,
     MoviesComponent,
-    SearchMovieComponent
+    SearchMovieComponent,
+    HomeComponent
   ],
   imports: [
     BrowserModule,
