@@ -46,3 +46,16 @@ footer {
 .pagination-nav {
   height: 70px;
 }
+
+.thumbnail{
+  background-color: black;
+}
+
+a {
+  text-decoration: none;
+  color: #e63946;
+}
+
+#rating {
+  color: white;
+}

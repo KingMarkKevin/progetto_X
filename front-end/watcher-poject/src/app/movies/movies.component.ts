@@ -41,7 +41,7 @@ export class MoviesComponent implements OnInit{
     console.log(id);
     this.movies.getMovie(id).subscribe((data) => this.movie = data);
     this.movies.getTrailer(this.idMovie).subscribe((data) => this.media = data);
-    this.movies.getCredits(this.idMovie).subscribe((data) => this.credits = data);
+    this.movies.getCredits(this.idMovie).subscribe((data) => console.log(this.credits = data));
   }
   
   videoURL(urltoSanitize) {

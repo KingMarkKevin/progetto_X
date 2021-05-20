@@ -3,14 +3,14 @@
        <div class="col-sm-6 col-md-4" *ngFor="let t of movieList.results">
           <div class="thumbnail">
              <div class="content">
-                <a [routerLink]="['/movie', t.id]" routerLinkActive="active">
+                <a id="title" [routerLink]="['/movie', t.id]" routerLinkActive="active">
                   <img class="img-responsive" [src]="photoURL(t.poster_path)" alt="poster">
                 </a>
                 
                 <div class="caption">
                    <h4>
                       <a [routerLink]="['/movie', t.id]" routerLinkActive="active">{{t.original_title}}</a>
-                      <p>Average Rating: {{t.vote_average}}</p>
+                      <p id="rating" >Average Rating: {{t.vote_average}}</p>
                    </h4>
                 </div>
              </div>

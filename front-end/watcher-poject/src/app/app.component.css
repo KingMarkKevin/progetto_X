@@ -12,7 +12,7 @@ body {
 
 /*Navbar CSS*/
 nav {
-  background: #1b1b1b;
+  background: #1d3557;
 }
 nav:after {
   content: "";
@@ -44,7 +44,7 @@ nav ul {
 }
 nav ul li {
   display: inline-block;
-  background: #1b1b1b;
+  background: #1d3557;
   margin: 0 5px;
 }
 nav ul li a {
@@ -55,9 +55,9 @@ nav ul li a {
   padding: 8px 15px;
 }
 nav ul li a:hover {
-  color: cyan;
+  color: #a8dadc;
   border-radius: 5px;
-  box-shadow: 0 0 5px #33ffff, 0 0 10px #66ffff;
+  box-shadow: 0 0 5px #f1faee, 0 0 10px #f1faee;
 }
 nav ul ul li a:hover {
   box-shadow: none;
@@ -65,7 +65,7 @@ nav ul ul li a:hover {
 nav ul ul {
   position: absolute;
   top: 90px;
-  border-top: 3px solid cyan;
+  border-top: 3px solid #f1faee;
   opacity: 0;
   visibility: hidden;
   transition: top 0.3s;
@@ -104,6 +104,10 @@ input {
   margin-left: 40px;
 }
 
+body {
+  background-color: #f1faee;
+}
+
 /*Responsive*/
 @media all and (max-width: 968px) {
   nav ul {
@@ -135,7 +139,7 @@ input {
     cursor: pointer;
   }
   .show:hover {
-    color: cyan;
+    color: #f1faee;
   }
   .icon {
     display: block;
