@@ -11,6 +11,7 @@ import { TrendingMovieComponent } from './trending-movie/trending-movie.componen
 import { MoviesComponent } from './movies/movies.component';
 import { SearchMovieComponent } from './search-movie/search-movie.component';
 import { HomeComponent } from './home/home.component';
+import { ForumComponent } from './forum/forum.component';
 
 
 @NgModule({
@@ -21,7 +22,8 @@ import { HomeComponent } from './home/home.component';
     TrendingMovieComponent,
     MoviesComponent,
     SearchMovieComponent,
-    HomeComponent
+    HomeComponent,
+    ForumComponent
   ],
   imports: [
     BrowserModule,
